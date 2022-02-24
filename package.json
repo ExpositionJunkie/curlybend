@@ -1,0 +1,16 @@
+{
+    "name": "curlyb-end",
+    "version": "1.0.0",
+    "description": "Backend for Curly B",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error not specified\" && exit 1",
+        "start": "nodemon server"
+    },
+    "dependencies": {
+        "express": "^4.17.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.15"
+    }
+}
