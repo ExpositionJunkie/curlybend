@@ -1,11 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
+const blogRouter = require("./routes/blogRouter");
 
 const hostname = "localhost";
 const port = 4500; //3000 reserved for front end dev
 
 const app = express();
-app.disable("x-powered-by"); //Don't like people to see what technology my backend is running. That's why we hide it!
+app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 app.use(morgan("dev"));
 app.use(express.json());
 

@@ -5,7 +5,7 @@ blogRouter
   .route("/")
   .all((req, res, next) => {
     res.statusCode = 200;
-    res.setHeaeder("Content-Type", "text/plain");
+    res.setHeader("Content-Type", "text/plain");
     next();
   })
   .get((req, res) => {
@@ -25,24 +25,5 @@ blogRouter
   .delete((req, res) => {
     res.end("Deleting all blog entries! May you go with God.");
   });
-
-app.get("/blog/:blogId", (req, res) => {
-  res.end(`Will send details of the blog entry: ${req.params.blo} to you`);
-});
-
-app.post("/blog/:blogId", (req, res) => {
-  res.statusCode = 403;
-  res.end(`POST operation not supported on /blog/${req.params.blo}`);
-});
-
-app.put("/blog/:blogId", (req, res) => {
-  res.write(`Updating the blog entry: ${req.params.blo}\n`);
-  res.end(`Will update the blog entry: ${req.body.name}
-          with text: ${req.body.text}`);
-});
-
-app.delete("/blog/:blogId", (req, res) => {
-  res.end(`Deleting blog entry: ${req.params.blo}`);
-});
 
 module.exports = blogRouter;
