@@ -4,14 +4,16 @@
     "date": "2/20/2022 1:32 AM",
     "title": "New Template Haiku",
     "subtitle": "Reaching Across Disciplines",
-    "text": ["Human & JS"]
+    "text": ["Human & JS"],
+    "tags": []
   },
   {
     "id": "1",
     "date": "2/16/2022 10:31 PM",
     "title": "Template",
     "subtitle": "Subtitle Haiku",
-    "text": ["Sample Paragraph (first line)", "Sans the CSS"]
+    "text": ["Sample Paragraph (first line)", "Sans the CSS"],
+    "tags": []
   },
   {
     "id": "2",
@@ -29,7 +31,8 @@
       "That said, there is (theoretically - obv haven't tried this yet) a way to make it work but it involves creating a backend to this thing and making a proxy URL and request to make it work. So stretch goal.",
       "Luckily, day 2 is going far better than day 1.",
       "I not only was able to get the age guessing app using the agify api (there has to be a shorter description of this somewhere!) up and running but was able to get routing and start entering data for this blog as well as a rudimentary skeleton format for it. Pretty good day, even if my name is apparently approaching an age where it can collect social security."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "3",
@@ -43,7 +46,8 @@
       "So it turns out I was looking in the wrong place for my datasets on Monday. The government has been doing a pretty excellent facelift on their data and making it much more accessible. If you haven't yet, and are in need of an API, you may want to check out data.gov. There are a wealth of APIs and docs there for layman and developer alike. It's government, so it is hit or miss with how well the upkeep is on them.",
       "I think the one for today should be this: https://power.larc.nasa.gov/api/pages/. Seems to be a study of solar energy fluxes around the globe. I'm sure that's a gross oversimplification, so if you are interested in more about this, head over to https://power.larc.nasa.gov/docs/methodology/. Should be interesting.",
       "I did really have my heart set on the one that studied yeast infections in space, but the homepage for it wouldn't load and I can't have another crashdata on my hands. Especially not when I'm up at 5:07 in the morning."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "4",
@@ -54,7 +58,8 @@
       "I got some sleep. I didn't get enough sleep. I feel like I am just around the corner from a breakthrough but need to take a break for a moment.",
       "For two hours now I have been thrashing in front of Buffy the Vampire Slayer. After all, no one is paying me for my time on this. I'm doing it out of the kindness of my heart for myself.",
       "What is thrashing? https://practice.geeksforgeeks.org/problems/what-is-the-cause-of-thrashing. That's nto what I meant. Geez. Too tired to summarize or rubber duck. But I am proud of my template haiku."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "5",
@@ -65,7 +70,8 @@
       "Thank the code gods. I got the NASA albedo readings to render. A feat of hurclean might today - especially looking over garbage code from yesterday. As CJ says, I needed some sleep to sharpen my tools. Coming back to it, it looks like my code editor was suffering quite a bit from me working back and forth between laptop and desktop. Things all over - junk code in every direction. What a difference it made coming back and being ready to tackle it after that very late night tuesday.",
       "It's ugly, but it is functional. I'll call that a win. Gonna focus on some easier APIs because I am behind by two today. Will go look after I make this commit and maybe get some food.",
       "I'm happy to report that part of why I got started so late today was that I had an interview. And I have a few more calls scheduled soon, so that's good. Trying not to get hung up on any one opportunity as this is all a numbers game. Someone's gotta see I've got moxy though. Will keep sharpening my skills until they do. Stay hungry, choombatta."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "6",
@@ -78,7 +84,8 @@
       "I mean, if I did more translations from the Star Trek translator api (since they have more than just vulcan and klingon - actually have a bunch) I could probably have it fetch 20 something results per query. Technically would be all different API calls, right? Technically correct-the best kind of correct.",
       "Still - I'm not that desperate yet. But Friday is tomorrow.",
       "Clock is ticking."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "7",
@@ -91,7 +98,8 @@
       "Been a good show of architecture and speed so far as well as setbacks. Leaving a few of the modules that don't work yet in so that when I get around to doing that backend proxy I can come around to them.",
       "Been reading that react is set up to do Node out of the box. Does that mean that I can possibly host these if I do have a Node backend on something free? Will need to look into this.",
       "Of the stretch goals that I am really looking forward to is that blog editor. Really wishing I had a better interface than JSON. Don't get me wrong, I appreciate what it does, but not so easy on the eyes. Or the quotation marks."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "8",
@@ -104,7 +112,8 @@
       "It's something my node teacher said when he could tell I was overwhelmed. And it's a hard habit to grow out of. To feel confident enough to move forward. But the more I put in the work the less I feel that. Of course there are some nerves and imposter syndrome. What dev doesn't feel the cards stacked against them at the beginning of their career change?.",
       "We're all terrified of being told that we can't make the cut. I think about it all of the time. My father was an electrical design engineer until around 1997. But when I was a child I saw him succumb to imposter syndrome. And he had a masters degree. It's easy to get really discouraged while looking for work. For a while I was, and I forgot about why I wanted to do this. The only thing that fixes that is touching code.",
       "And let's face it, I thrive on spite, and on being told no. I've climbed mountains because I was told I couldn't. I've learned things in record time because people told me it would be difficult. I thrive on that. I don't thrive on inactivity though. I wither there. It's been really freeing to get my mind back. And honestly to give my thoughts an outlet. JSON data, you're not so bad."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "9",
@@ -118,7 +127,8 @@
       "So sleep well my chooms - for tomorrow we ride at around 1 pm because I have some sleep debt to work off.",
       "And don't forget, dreamers, information is supposed to be free. Let's keep it that way.",
       "Zenith out."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "10",
@@ -144,7 +154,8 @@
       "Sometimes there are healthy wake up calls - like that interview I failed because I hadn't really touched code in quite some time and it showed - oof. But realistically I find that what more people need to hear is not the barriers to entry but the fact that they can do it too.",
       "I was watching Painting With John a few weeks back and he said '...not everyone can paint...' and very cleverly followed it up with a qualifier saying everyone could but loses their imagination or their ability to believe they can. (I hope I'm getting that right - this was a while ago I watched this.)",
       "I think this is true with code. But it's not something you can lose forever. Soemtimes it is something you forget from time to time. I think I forgot it for a while."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "11",
@@ -159,7 +170,8 @@
       "In the past, I've kind of started with this grand idea that needs to be perfect to execute, and so I've had a lot of code that just never got to be written. Because of this, I think I've missed the very valuable opportunity of being wrong. Being wrong is lovely, becuase once someone calls you out on it, you can get better and be better. And I think that's beautiful. If you don't yet, that's ok, but I thin you'll feel better once you learn to embrace the suck, the fail, the flail, the snap, and trust the process.",
       "Either way, hats off to you - choom! Go make something amazing today - regardless of the medium!",
       "Zenith out. :)"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "12",
@@ -176,7 +188,8 @@
       "Back. Tried to correct putty problem again - no dice. Tried to update setting for keyboard - program disappears and blips out of existence. Lovely. Saw someone fixed the problems I'm having by nuking cpanel altogehter. This seems like a good option to me since I don't have anything on there yet anyway and probably did a bunch more harm than good. Anything I set up was set up wrong anyway. Gonna go this route.",
       "Ok done, just like this says: https://www.pickaweb.co.uk/kb/factory-reset-your-cpanel-account/. Fingers crossed. Coffee ready.",
       "Got it up and running. I did a bunch of stuff I didn't need to, it turns out. https://davenewman.tech/blog/host-react-namecheap/. This will be helpful wehn I add the node server. Not sure that htaccess file I made does anything at all tbh. Will prob need to config when I get around to that."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "13",
@@ -194,7 +207,8 @@
       "Say a hail mary and type in the domain.",
       "This worked for me and after two days of banging my head against this I sincerely hope I've been able to save you some of my pain points.",
       "If it didn't work and you're now considering a career making artisinal bread instead, let me know. (I really like sourdough.)"
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "14",
@@ -204,7 +218,8 @@
     "text": [
       "https://blog.shahednasser.com/how-to-internationalize-a-react-app/ been trying to begin implementing i18next when I realized it doesn't quite do what I think it did. I thought it would provide the translations to me already but it does not. It's more a system of setting up the files so that you can then provide language support of converted documents. Basically, I would have to run this thing through a translator to provide this and save the JSON file. Gotta be an easier way though.",
       "So here is what I'm thinking. I found this API called yandex for translating. I'm trying to keep this cheap, and they seem to be pretty robust and offer a range of services from this. Gonna look more into this. But for right now I should probably reign it in. I've made a dynamic dropdown and began setting up for that kind of support but don't have the energy to run this thing through an API. Gonna start with the code I have for 1:18 though. If I wanted to do it without an API I could probably run this through google translate. But still, awful lot of work wehn I could just do it automated in the start. A little bit of upfront for a lot less work later on. Plus if I do end up trying to sling some shopify sites on the side, this will make qualifying for translation a ton easier."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "15",
@@ -214,7 +229,8 @@
     "text": [
       "Ok, I lied. I didn't quit. Didn't want to leave it half dead so I spent a little extra time getting this working. Got the i18next part working. When I set up my server, I think that I should make a process that runs this stuff through an API and then can save the translations. That alone should be enough to show off some skills I think. Plus, this stuff was complex to implement. I sure bet that someone out there can probably benefit from this.",
       "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "16",
@@ -226,7 +242,8 @@
       "https://www.youtube.com/watch?v=kpcjSaRngg8&t=932s This is a pretty nice refresher for anyone needing to implement SASS btw. Covers the basics pretty succinctly if you've been away for a while or if you are just learning it.",
       "This one goes a bit more in depth with how it works and why to use it over other css preprocessors: https://www.youtube.com/watch?v=nu5mdN2JIwM",
       "I also came across this article on react interview questions if anyone is needing them that pretty succinctly sums up a few functions that weren't coverd much in bootcamp: https://www.freecodecamp.org/news/react-interview-questions-to-know/. useCallback, useRef, and useMemo in particular it was a good jumping off point for and made me realize that I was doing some of these things in a way that could have been a lot easier had I known. I now know that I need to refactor a few things. Add it to the ever growing list, I suppose."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "17",
@@ -237,7 +254,8 @@
       "Got SCSS set up, took it off of mapping everything so that it doesn't take up as much space. I don't use those maps anyway. I'm wondering if my file architecture is right here. Some people put them all in a stylesheet and I thought that I wasn't a fan of that becuase it made it hard to find your file in styles and at the component level. Tomorrow first order of business should probably be to toggle that setting and change where they all route to and make it route to its own style sheet. It doesn't really matter where it goes, after all, as long as it all pulls in the data. My main reasoning for this is that it is difficult to have components like Navbar.js right between Navbar.css and Navbar.scss. I keep clicking the wrong one and if I keep doing that something is going to get overridden and made more difficult in the future.",
       "Next, I need to set some standards pretty quickly. Now that I have Sass, I can offload some of those bloated components I created and just make them run on scss with mixins. Like the title component, subtitle - all sass would fix that.",
       "But really I'm putting off doing a node server. But I need a node server. I could take one of my old ones and refactor the code for it. Truthfully, I'd like a fresh start now that I've had some time to think about architecture. My blog template right now requires a place for tags. And I will have to edit this whole thing. I don't want to scrub away all of the truth of my experience here though. I have the luxury of knowing that devs are made through trial and error and failure. That doing things wrong is sometimes more valuable than doing things right. If you've had to fix it - you've found out intimately how it's broken. That the best part of this job is getting done with doing something really hard and getting to be proud of it and later avoiding that mistake."
-    ]
+    ],
+    "tags": []
   },
   {
     "id": "18",

@@ -1,7 +1,49 @@
 const express = require("express");
 const morgan = require("morgan");
+
+//Mongo Stuff
+const mongoose = require("mongoose");
+const Blog = require("./models/blog");
+
+//Routes
 const blogRouter = require("./routes/blogRouter");
 
+//Mongo again
+const url = "mongodb://127.0.0.1/blog";
+const connect = mongoose.connect(url);
+
+connect.then(() => {
+  console.log("Connected to blog server!");
+
+  const newBlog = new Blog({
+    date: "2/16/2022 10:31 PM",
+    title: "Template",
+    subtitle: "Subtitle Haiku",
+    text: ["Sample Paragraph (first line)", "Sans the CSS"],
+    tags: ["Template"],
+  });
+
+  newBlog
+    .save()
+    .then((blog) => {
+      console.log(blog);
+      return Blog.find();
+    })
+    .then((blogs) => {
+      console.log(blogs);
+      return Blog.deleteMany(); //gotta take this out, it deletes them, only in for testing purposes
+    })
+    .then((blogs) => {
+      console.log(blogs);
+      return mongoose.connection.close();
+    })
+    .catch((err) => {
+      console.log(err);
+      mongoose.connection.close();
+    });
+});
+
+//Back to express
 const hostname = "localhost";
 const port = 4500; //3000 reserved for front end dev
 
