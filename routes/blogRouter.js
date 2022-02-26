@@ -79,4 +79,151 @@ blogRouter
       .catch((err) => next(err));
   });
 
+blogRouter
+  .route("/:blogId/comments")
+  .get((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog) {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(blog.comments);
+        } else {
+          err = new Error(`Blog ${req.params.blogId} not found.`);
+          err.staus = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  })
+  .post((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog) {
+          blog.comments.push(req.body);
+          blog
+            .save()
+            .then((blog) => {
+              res.stausCode = 200;
+              res.setHeader("Content-Type", "application/json");
+              res.json(blog);
+            })
+            .catch((err) => next(err));
+        } else {
+          err = new Error(`Blog ${req.params.blogId} not found.`);
+          err.status = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  })
+  .put((req, res) => {
+    res.statusCode = 403;
+    res.end(
+      `Put operation not supported on /blog/${req.params.blogId}/comments. Try going to the individual comment instead!`
+    );
+  })
+  .delete((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog) {
+          for (let i = blog.comments.length - 1; i >= 0; i--) {
+            blog.comments.id(blog.comments[i]._id).remove();
+          }
+          blog
+            .save()
+            .then((blog) => {
+              res.statusCode = 200;
+              res.setHeader("Content-Type", "application/json");
+              res.json(blog);
+            })
+            .catch((err) => next(err));
+        } else {
+          err = new Error(`Blog ${req.params.blogId} not found.`);
+          err.status = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  });
+
+blogRouter
+  .route("/:blogId/comments/:commentId")
+  .get((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog && blog.comments.id(req.params.commentId)) {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(blog.comments.id(req.params.commentId));
+        } else if (!blog) {
+          err = new Error(`Blog ${req.params.blogId} not found.`);
+          err.status = 404;
+          return next(err);
+        } else {
+          err = new Error(`Comment ${req.params.commentId} not found.`);
+          err.status = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  })
+  .post((req, res) => {
+    res.statusCode = 403;
+    res.end(
+      `POST operation not supported on /blog/${req.params.blogId}/comments/${req.params.commentId}`
+    );
+  })
+  .put((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog && blog.comments.id(req.params.commentId)) {
+          //will need to add additional ifs as comment features added.
+          //Emojis eventually? Photos too perhaps.
+          //But let's keep this simple for right now.
+          if (req.body.text) {
+            blog.comments.id(req.params.commentId).text = req.body.text;
+          }
+          blog
+            .save()
+            .then((blog) => {
+              res.statusCode = 200;
+              res.setHeader("Content-Type", "application/json");
+              res.json(blog);
+            })
+            .catch((err) => next(err));
+        } else if (!blog) {
+          err = new Error(`Blog ${req.params.blogId} not found.`);
+          err.status = 404;
+          return next(err);
+        } else {
+          err = new Error(`Comment ${req.params.commentId} not found.`);
+          err.status = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  })
+  .delete((req, res, next) => {
+    Blog.findById(req.params.blogId)
+      .then((blog) => {
+        if (blog && blog.comments.id(req.params.commentId)) {
+          blog.comments.id(req.params.commentId).remove();
+          blog
+            .save()
+            .then((blog) => {
+              res.statusCode = 200;
+              res.setHeader("Content-Type", "application/json");
+              res.json(blog);
+            })
+            .catch((err) => next(err));
+        } else if (!blog) {
+          err = new Error(`Blog ${req.params.blogId} not found`);
+          err.status = 404;
+          return next(err);
+        }
+      })
+      .catch((err) => next(err));
+  });
+
 module.exports = blogRouter;
