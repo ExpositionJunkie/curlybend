@@ -1,6 +1,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+  text: {
+    type: [String],
+    required: true,
+  },
+  author: {
+    type: String,
+    required: true,
+  },
+});
+
 const blogSchema = new Schema(
   {
     date: Date,
@@ -16,6 +27,11 @@ const blogSchema = new Schema(
     },
     text: [String],
     tags: [String],
+    comments: [commentSchema],
+    featured: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );
