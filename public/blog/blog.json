@@ -5,7 +5,7 @@
     "title": "New Template Haiku",
     "subtitle": "Reaching Across Disciplines",
     "text": ["Human & JS"],
-    "tags": []
+    "tags": ["poetry", "code", "template", "templatehaiku", "haiku", "json"]
   },
   {
     "id": "1",
@@ -13,7 +13,7 @@
     "title": "Template",
     "subtitle": "Subtitle Haiku",
     "text": ["Sample Paragraph (first line)", "Sans the CSS"],
-    "tags": []
+    "tags": ["poetry", "code", "template", "templatehaiku", "haiku", "json"]
   },
   {
     "id": "2",
@@ -32,7 +32,7 @@
       "Luckily, day 2 is going far better than day 1.",
       "I not only was able to get the age guessing app using the agify api (there has to be a shorter description of this somewhere!) up and running but was able to get routing and start entering data for this blog as well as a rudimentary skeleton format for it. Pretty good day, even if my name is apparently approaching an age where it can collect social security."
     ],
-    "tags": []
+    "tags": ["interviewfail", "api", "fivebyfriday"]
   },
   {
     "id": "3",
@@ -47,7 +47,7 @@
       "I think the one for today should be this: https://power.larc.nasa.gov/api/pages/. Seems to be a study of solar energy fluxes around the globe. I'm sure that's a gross oversimplification, so if you are interested in more about this, head over to https://power.larc.nasa.gov/docs/methodology/. Should be interesting.",
       "I did really have my heart set on the one that studied yeast infections in space, but the homepage for it wouldn't load and I can't have another crashdata on my hands. Especially not when I'm up at 5:07 in the morning."
     ],
-    "tags": []
+    "tags": ["apis", "fivebyfriday", "overworked", "uptoolate"]
   },
   {
     "id": "4",
@@ -59,7 +59,7 @@
       "For two hours now I have been thrashing in front of Buffy the Vampire Slayer. After all, no one is paying me for my time on this. I'm doing it out of the kindness of my heart for myself.",
       "What is thrashing? https://practice.geeksforgeeks.org/problems/what-is-the-cause-of-thrashing. That's nto what I meant. Geez. Too tired to summarize or rubber duck. But I am proud of my template haiku."
     ],
-    "tags": []
+    "tags": ["thrashing", "overworked"]
   },
   {
     "id": "5",
@@ -71,7 +71,7 @@
       "It's ugly, but it is functional. I'll call that a win. Gonna focus on some easier APIs because I am behind by two today. Will go look after I make this commit and maybe get some food.",
       "I'm happy to report that part of why I got started so late today was that I had an interview. And I have a few more calls scheduled soon, so that's good. Trying not to get hung up on any one opportunity as this is all a numbers game. Someone's gotta see I've got moxy though. Will keep sharpening my skills until they do. Stay hungry, choombatta."
     ],
-    "tags": []
+    "tags": ["apis", "fivebyfriday", "balance"]
   },
   {
     "id": "6",
@@ -85,7 +85,7 @@
       "Still - I'm not that desperate yet. But Friday is tomorrow.",
       "Clock is ticking."
     ],
-    "tags": []
+    "tags": ["fivebyfriday", "api", "CORS"]
   },
   {
     "id": "7",
@@ -99,7 +99,7 @@
       "Been reading that react is set up to do Node out of the box. Does that mean that I can possibly host these if I do have a Node backend on something free? Will need to look into this.",
       "Of the stretch goals that I am really looking forward to is that blog editor. Really wishing I had a better interface than JSON. Don't get me wrong, I appreciate what it does, but not so easy on the eyes. Or the quotation marks."
     ],
-    "tags": []
+    "tags": ["easywin", "fivebyfriday", "api"]
   },
   {
     "id": "8",
@@ -108,12 +108,12 @@
     "subtitle": "Electric Boogaloo(?)",
     "text": [
       "Ok, thrashing. I'm tired but not too tired to write my thoughts coherently right now. And that's the key.",
-      "Anyway, I forgot to tell you about thrashing. Thrashing is this thing you do when you have spent too long in front of a screen. It's technically the other thing I mentioned the other day. TODO: ADD LINK WHEN YOU HAVE MORE TIME. But I meant it colloquially. Like one thrashes wheat. To wildly flail with abandon.",
+      "Anyway, I forgot to tell you about thrashing. Thrashing is this thing you do when you have spent too long in front of a screen. It's technically the other thing I mentioned earlier this week. But I meant it colloquially. Like one thrashes wheat. To wildly flail with abandon.",
       "It's something my node teacher said when he could tell I was overwhelmed. And it's a hard habit to grow out of. To feel confident enough to move forward. But the more I put in the work the less I feel that. Of course there are some nerves and imposter syndrome. What dev doesn't feel the cards stacked against them at the beginning of their career change?.",
       "We're all terrified of being told that we can't make the cut. I think about it all of the time. My father was an electrical design engineer until around 1997. But when I was a child I saw him succumb to imposter syndrome. And he had a masters degree. It's easy to get really discouraged while looking for work. For a while I was, and I forgot about why I wanted to do this. The only thing that fixes that is touching code.",
       "And let's face it, I thrive on spite, and on being told no. I've climbed mountains because I was told I couldn't. I've learned things in record time because people told me it would be difficult. I thrive on that. I don't thrive on inactivity though. I wither there. It's been really freeing to get my mind back. And honestly to give my thoughts an outlet. JSON data, you're not so bad."
     ],
-    "tags": []
+    "tags": ["thrashing", "overworking", "balance"]
   },
   {
     "id": "9",
@@ -128,7 +128,7 @@
       "And don't forget, dreamers, information is supposed to be free. Let's keep it that way.",
       "Zenith out."
     ],
-    "tags": []
+    "tags": ["easywin", "css", "apipractice", "fivebyfriday"]
   },
   {
     "id": "10",
@@ -136,7 +136,7 @@
     "title": "Information Should be Free",
     "subtitle": "Transparency & Full Disclosure",
     "text": [
-      "Where do you draw the line? I guess I haven't made a comment button on this iteration of the blog. I'm using it as a notepad right now though. If you got here, you probably know me already. Or you can probably look me up on linkedin. I go by Roz Albrecht there",
+      "Where do you draw the line? I guess I haven't made a comment button on this iteration of the blog. I'm using it as a notepad right now though. If you got here, you probably know me already.",
       "You know, I used to be afraid to enter my shortened name. I used to be afraid of a lot of things. Too afraid to ask smart people about what they do because I was told it was rude. But in reality, the smart people who like what they do - they can really teach you a lot. I have learned many things by being curious and attentive when smart people are speaking. The key is learning when to listen. And learning that the time to listen is kind of always.",
       "This can be hard. I'm not discounting that.",
       "This can be really hard because you are told that is uncouth to ask about work. That doing a thing is locked behind a phd or a masters degree or another person's sign off.",
@@ -155,7 +155,7 @@
       "I was watching Painting With John a few weeks back and he said '...not everyone can paint...' and very cleverly followed it up with a qualifier saying everyone could but loses their imagination or their ability to believe they can. (I hope I'm getting that right - this was a while ago I watched this.)",
       "I think this is true with code. But it's not something you can lose forever. Soemtimes it is something you forget from time to time. I think I forgot it for a while."
     ],
-    "tags": []
+    "tags": ["mantra", "venting", "personal"]
   },
   {
     "id": "11",
@@ -171,7 +171,7 @@
       "Either way, hats off to you - choom! Go make something amazing today - regardless of the medium!",
       "Zenith out. :)"
     ],
-    "tags": []
+    "tags": ["inspiration", "enemyofgood", "perfectionism"]
   },
   {
     "id": "12",
@@ -189,7 +189,7 @@
       "Ok done, just like this says: https://www.pickaweb.co.uk/kb/factory-reset-your-cpanel-account/. Fingers crossed. Coffee ready.",
       "Got it up and running. I did a bunch of stuff I didn't need to, it turns out. https://davenewman.tech/blog/host-react-namecheap/. This will be helpful wehn I add the node server. Not sure that htaccess file I made does anything at all tbh. Will prob need to config when I get around to that."
     ],
-    "tags": []
+    "tags": ["cPanel", "devGroan", "bogwitch"]
   },
   {
     "id": "13",
@@ -208,7 +208,7 @@
       "This worked for me and after two days of banging my head against this I sincerely hope I've been able to save you some of my pain points.",
       "If it didn't work and you're now considering a career making artisinal bread instead, let me know. (I really like sourdough.)"
     ],
-    "tags": []
+    "tags": ["cPanel", "tutorial"]
   },
   {
     "id": "14",
@@ -219,7 +219,7 @@
       "https://blog.shahednasser.com/how-to-internationalize-a-react-app/ been trying to begin implementing i18next when I realized it doesn't quite do what I think it did. I thought it would provide the translations to me already but it does not. It's more a system of setting up the files so that you can then provide language support of converted documents. Basically, I would have to run this thing through a translator to provide this and save the JSON file. Gotta be an easier way though.",
       "So here is what I'm thinking. I found this API called yandex for translating. I'm trying to keep this cheap, and they seem to be pretty robust and offer a range of services from this. Gonna look more into this. But for right now I should probably reign it in. I've made a dynamic dropdown and began setting up for that kind of support but don't have the energy to run this thing through an API. Gonna start with the code I have for 1:18 though. If I wanted to do it without an API I could probably run this through google translate. But still, awful lot of work wehn I could just do it automated in the start. A little bit of upfront for a lot less work later on. Plus if I do end up trying to sling some shopify sites on the side, this will make qualifying for translation a ton easier."
     ],
-    "tags": []
+    "tags": ["language", "i18Next"]
   },
   {
     "id": "15",
@@ -230,7 +230,7 @@
       "Ok, I lied. I didn't quit. Didn't want to leave it half dead so I spent a little extra time getting this working. Got the i18next part working. When I set up my server, I think that I should make a process that runs this stuff through an API and then can save the translations. That alone should be enough to show off some skills I think. Plus, this stuff was complex to implement. I sure bet that someone out there can probably benefit from this.",
       "Also this is assuaging a little bit of my guilt for being an American who can't rub two sentences together in anythign other than javascript. I took French for four years. The only thing I know how to say in it is 'do you want to rollerblade with me' and I'm not even confident enough to type that in French here without a translator."
     ],
-    "tags": []
+    "tags": ["language", "i18Next"]
   },
   {
     "id": "16",
@@ -243,7 +243,7 @@
       "This one goes a bit more in depth with how it works and why to use it over other css preprocessors: https://www.youtube.com/watch?v=nu5mdN2JIwM",
       "I also came across this article on react interview questions if anyone is needing them that pretty succinctly sums up a few functions that weren't coverd much in bootcamp: https://www.freecodecamp.org/news/react-interview-questions-to-know/. useCallback, useRef, and useMemo in particular it was a good jumping off point for and made me realize that I was doing some of these things in a way that could have been a lot easier had I known. I now know that I need to refactor a few things. Add it to the ever growing list, I suppose."
     ],
-    "tags": []
+    "tags": ["SASS", "SCSS"]
   },
   {
     "id": "17",
@@ -266,6 +266,28 @@
       "Starting setup of a backend in node to get back into the swing of it. Actually have written about as much in node as I have React, though somewhat less recently. Thing is I'll get done with the setup but then have to implement cors and haven't been able to host it. React Native doesn't play so nice with localhost the last time I checked. Could be wrong about that. Could be I was thrashing last time I tried and made a rookie mistake. Either way I got hosting so I can do CORs and a Native App too.",
       "Could use it for my D and D notes - they are becoming increasingly complex as the gang has aquired a new bar that we now have to manage, stock and decorate. Plus, the one I am using is kind of clunky. D&D beyond is cool but it sure would be nice to be able to see the bar finances for this module. Plus if there's one thing devs love - it's D&D. I weas a bit embarrassed on that previous project when it wasn't built out fully and there's a decent API that would work for it already, which would reduce the load of data I have to store here.",
       "Either way, I got it started and set up a bit of middleware for logging. Made sure to take off that header that says it's a node server. I mean, you'll know that from this blog entry. But still, best practice, you know. I was really really tempted to call it curlybooty. Like really really tempted. I may change the name later. Not sure I want people to see that on github though. Or maybe I do. Could be a conversation starter. Oh well, I can call it booty to myself either way. There are ruder words than that floating around."
+    ],
+    "tags": ["Mongo", "Mongoose", "Backend", "CurlyBooty", "Node", "Express"]
+  },
+  {
+    "id": "19",
+    "date": "2/25/2022 6:39 PM",
+    "title": "Curly Booty",
+    "subtitle": "Mongo/Mongoose",
+    "text": [
+      "Got the basic architecture of the blog posts set up now, feeling pretty good about that. It was a little daunting to try and remember how to use Mongo. I'll admit there's a lot of gaps in my knowledge about it. I just know I am going to utterly wreck this database before I am through. I'm thinking about saving json files to a separate repo for backup as part of the build process as I go. Will do that once I get that set up. For right now, I'm backing up here. I remember versioning being very tricky and having scrap and wipe becuase I was so novice at versioning. I would like to avoid that this time around, but I'm a pragmatist. If I can break it, I will break it. Maybe that is what starts to turn you from a rookie into a somewhat respectable coder. Understanding that and planning for it. Redundancies and such. I am still very terrified of what happens when I try to put this up live.",
+      "But for right now I'm going to go ahead and celebrate this little win. I set up the boilerplate yesterday - stuff like a message saying what it would do, just like they taught in bootcamp and then today made the mongoose models, set up the db locally, and got it to connect through routing. It does the CRUD stuff and actually had minimal problems in setting up. Typo here and there but overall was very easy for me to go in and fix when the time came. Definitely felt easier than any times before. When I was just learning, it took me an entire week to do what I was able to do in a few hours. Even less time because I spent an hour on the Legion of Code standup meeting (a little something I cooked up to keep myself and my coding/graphic design/ux buddies working on stuff and having deadlines.) Also spent another hour with Molly talking about her design goals specifically and getting a little insight into photoshop. Crazy how quickly she can make really cool looking art. Really shows how much time and effort she has put into it - knows all of the shortcuts and some things I never would have dreamed of thinking of. She's gonna make the big bucks soon - I just know it.",
+      "Anyway, I have some much earned FFXIV time waiting for me - so I'm off to find my Chocobo and blow this blog. Peace, chooms!"
+    ],
+    "tags": [
+      "MollyDean",
+      "Mongo",
+      "Mongoose",
+      "Backend",
+      "CurlyBooty",
+      "Node",
+      "Express",
+      "LegionOfCode"
     ]
   }
 ]
