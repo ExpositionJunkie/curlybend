@@ -1,14 +1,10 @@
 const express = require("express");
 const logger = require("morgan");
 var createError = require("http-errors");
-
-//Sessions
-const session = require("express-session");
-const FileStore = require("session-file-store")(session);
+const config = require("./config");
 
 //Passport
 const passport = require("passport");
-const authenticate = require("./authenticate");
 
 //Mongo Stuff
 const mongoose = require("mongoose");
@@ -18,8 +14,7 @@ const blogRouter = require("./routes/blogRouter");
 const usersRouter = require("./routes/users");
 
 //Mongo again
-const url = "mongodb://127.0.0.1/blog";
-const connect = mongoose.connect(url);
+const connect = mongoose.connect(config.mongoUrl);
 
 connect.then(() => {
   console.log("Connected to blog server!");
@@ -35,35 +30,10 @@ app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 app.use(logger("dev"));
 app.use(express.json());
 
-app.use(
-  session({
-    name: "session-id",
-    secret: "12345-67890-09876-54321",
-    saveUninitialized: false,
-    resave: false,
-    store: new FileStore(),
-  })
-);
-
 app.use(passport.initialize());
-app.use(passport.session());
 
 app.use("/blog", blogRouter);
 app.use("/users", usersRouter);
-
-function auth(req, res, next) {
-  console.log(req.user);
-
-  if (!req.user) {
-    const err = new Error("You are not authenticated!");
-    err.status = 401;
-    return next(err);
-  } else {
-    return next();
-  }
-}
-
-app.use(auth);
 
 app.use(express.static(__dirname + "/public"));
 

@@ -1,6 +1,7 @@
 const express = require("express");
 const Blog = require("../models/blog");
 const blogRouter = express.Router();
+const authenticate = require('../authenticate');
 
 blogRouter
   .route("/")
@@ -13,7 +14,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post((req, res, next) => {
+  .post(authenticate.verifyUser, (req, res, next) => {
     Blog.create(req.body)
       .then((blog) => {
         console.log("Blog Created", blog);
@@ -23,13 +24,13 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .put((req, res) => {
+  .put(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(
       "PUT operation not supported on /blog - please add your entry at blog/blogID instead."
     );
   })
-  .delete((req, res, next) => {
+  .delete(authenticate.verifyUser, (req, res, next) => {
     Blog.deleteMany()
       .then((response) => {
         res.statusCode = 200;
@@ -50,7 +51,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post((req, res) => {
+  .post(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(`POST operation not supported on /blogs/${req.params.blogId}`);
   })
@@ -69,7 +70,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .delete((req, res, next) => {
+  .delete(authenticate.verifyUser, (req, res, next) => {
     Blog.findByIdAndDelete(req.params.blogId)
       .then((response) => {
         res.statusCode = 200;
@@ -96,7 +97,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post((req, res, next) => {
+  .post(authenticate.verifyUser, (req, res, next) => {
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog) {
@@ -117,13 +118,13 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .put((req, res) => {
+  .put(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(
       `Put operation not supported on /blog/${req.params.blogId}/comments. Try going to the individual comment instead!`
     );
   })
-  .delete((req, res, next) => {
+  .delete(authenticate.verifyUser, (req, res, next) => {
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog) {
@@ -168,13 +169,13 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post((req, res) => {
+  .post(authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(
       `POST operation not supported on /blog/${req.params.blogId}/comments/${req.params.commentId}`
     );
   })
-  .put((req, res, next) => {
+  .put(authenticate.verifyUser, (req, res, next) => {
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog && blog.comments.id(req.params.commentId)) {
@@ -204,7 +205,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .delete((req, res, next) => {
+  .delete(authenticate.verifyUser, (req, res, next) => {
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog && blog.comments.id(req.params.commentId)) {
