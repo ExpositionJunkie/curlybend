@@ -1,19 +1,25 @@
 {
-    "name": "curlyb-end",
-    "version": "1.0.0",
-    "description": "Backend for Curly B",
-    "main": "server.js",
-    "scripts": {
-        "test": "echo \"Error not specified\" && exit 1",
-        "start": "nodemon server"
-    },
-    "dependencies": {
-        "express": "^4.17.3",
-        "mongodb": "^4.4.0",
-        "mongoose": "^6.2.3",
-        "morgan": "^1.10.0"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.15"
-    }
+  "name": "curlyb-end",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Backend for Curly B",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error not specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.4.0",
+    "mongoose": "^6.2.3",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
 }
