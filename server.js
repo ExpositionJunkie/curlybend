@@ -6,12 +6,16 @@ var createError = require("http-errors");
 const session = require("express-session");
 const FileStore = require("session-file-store")(session);
 
+//Passport
+const passport = require("passport");
+const authenticate = require("./authenticate");
+
 //Mongo Stuff
 const mongoose = require("mongoose");
 
 //Routes
 const blogRouter = require("./routes/blogRouter");
-const usersRouter = require('./routes/users')
+const usersRouter = require("./routes/users");
 
 //Mongo again
 const url = "mongodb://127.0.0.1/blog";
@@ -41,30 +45,25 @@ app.use(
   })
 );
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use("/blog", blogRouter);
-app.use('/users', usersRouter);
+app.use("/users", usersRouter);
 
 function auth(req, res, next) {
-  console.log(req.session);
+  console.log(req.user);
 
-  if (!req.session.user) {
-      const err = new Error('You are not authenticated!');
-      err.status = 401;
-      return next(err);
+  if (!req.user) {
+    const err = new Error("You are not authenticated!");
+    err.status = 401;
+    return next(err);
   } else {
-      if (req.session.user === 'authenticated') {
-          return next();
-      } else {
-          const err = new Error('You are not authenticated!');
-          err.status = 401;
-          return next(err);
-      }
+    return next();
   }
 }
 
 app.use(auth);
-
-
 
 app.use(express.static(__dirname + "/public"));
 
