@@ -27,7 +27,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .put(authenticate.verifyUser, (req, res) => {
+  .put(authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     res.statusCode = 403;
     res.end(
       "PUT operation not supported on /blog - please add your entry at blog/blogID instead."
@@ -35,7 +35,7 @@ blogRouter
   })
   .delete(
     authenticate.verifyUser,
-    authenticate.verifyAdmin,
+    authenticate.verifyAdmin, //delete all blogs allowed only to admin
     (req, res, next) => {
       Blog.deleteMany()
         .then((response) => {
@@ -60,7 +60,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post(authenticate.verifyUser, (req, res) => {
+  .post(authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     res.statusCode = 403;
     res.end(`POST operation not supported on /blogs/${req.params.blogId}`);
   })
@@ -80,6 +80,7 @@ blogRouter
       .catch((err) => next(err));
   })
   .delete(authenticate.verifyUser, (req, res, next) => {
+    // only user can delete their blog entry
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog.author._id == req.user.id) {
@@ -143,7 +144,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .put(authenticate.verifyUser, (req, res) => {
+  .put(authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     res.statusCode = 403;
     res.end(
       `Put operation not supported on /blog/${req.params.blogId}/comments. Try going to the individual comment instead!`
@@ -201,7 +202,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .post(authenticate.verifyUser, (req, res) => {
+  .post(authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
     res.statusCode = 403;
     res.end(
       `POST operation not supported on /blog/${req.params.blogId}/comments/${req.params.commentId}`
@@ -238,10 +239,13 @@ blogRouter
       .catch((err) => next(err));
   })
   .delete(authenticate.verifyUser, (req, res, next) => {
+    //only user may delete their own comments
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog && blog.comments.id(req.params.commentId)) {
-          if ((blog.comments.id(req.params.commentId).author._id == req.user.id)) {
+          if (
+            blog.comments.id(req.params.commentId).author._id == req.user.id
+          ) {
             blog.comments.id(req.params.commentId).remove();
             blog
               .save()
@@ -253,7 +257,11 @@ blogRouter
               .catch((err) => next(err));
           } else {
             err = new Error(
-              `Blog ${req.params.commentId} was not written by user ${req.user.id} but was written by user ${blog.comments.id(req.params.commentId).author._id} - operation is forbidden.`
+              `Blog ${req.params.commentId} was not written by user ${
+                req.user.id
+              } but was written by user ${
+                blog.comments.id(req.params.commentId).author._id
+              } - operation is forbidden.`
             );
             err.status = 403;
             return next(err);
