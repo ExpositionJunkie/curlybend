@@ -7,6 +7,7 @@ blogRouter
   .route("/")
   .get((req, res, next) => {
     Blog.find()
+      .populate("author")
       .populate("comments.author")
       .then((blogs) => {
         res.statusCode = 200;
@@ -16,6 +17,7 @@ blogRouter
       .catch((err) => next(err));
   })
   .post(authenticate.verifyUser, (req, res, next) => {
+    req.body.author = req.user._id;
     Blog.create(req.body)
       .then((blog) => {
         console.log("Blog Created", blog);
@@ -45,6 +47,7 @@ blogRouter
   .route("/:blogId")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("author")
       .populate("comments.author")
       .then((blog) => {
         res.statusCode = 200;
@@ -86,6 +89,7 @@ blogRouter
   .route("/:blogId/comments")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("author")
       .populate("comments.author")
       .then((blog) => {
         if (blog) {
@@ -156,6 +160,7 @@ blogRouter
   .route("/:blogId/comments/:commentId")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("author")
       .populate("comments.author")
       .then((blog) => {
         if (blog && blog.comments.id(req.params.commentId)) {
