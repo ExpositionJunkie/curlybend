@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 //Routes
 const blogRouter = require("./routes/blogRouter");
 const usersRouter = require("./routes/users");
+const uploadRouter = require("./routes/uploadRouter");
 
 //Back to express
 var app = express();
@@ -42,13 +43,12 @@ app.all("*", (req, res, next) => {
   }
 });
 
-
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
-
-
 
 app.use("/blog", blogRouter);
 app.use("/users", usersRouter);
+app.use("/imageUpload", uploadRouter);
+
 app.use(express.static(path.join(__dirname + "/public")));
 
 app.use(function (req, res, next) {
