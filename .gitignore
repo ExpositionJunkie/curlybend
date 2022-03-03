@@ -1,2 +1,4 @@
 /node_modules
 /config.js
+bin/curlyb.cert
+bin/curlyb.key
