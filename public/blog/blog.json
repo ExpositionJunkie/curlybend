@@ -289,5 +289,17 @@
       "Express",
       "LegionOfCode"
     ]
+  },
+  {
+    "id": "20",
+    "date": "2/23/2022 7:07",
+    "title": "The Great Flood",
+    "subtitle": "Life interruptions",
+    "text": [
+      "Basement flooded yesterday around 4. Have been moving things around and dealing with the strain of moving everything around, vacuuming everything, digging trenches for the water and trying ot get my computer set up on the other side of the house that isn't flooding. I'm lucky that I know what to do in this situation since I just went through this two months ago, but it is a little frustrating in that I only just put some of that stuff back a week or two ago only to have to move it all across the floor at once. Still, CJ can help this time since his back is back to normal, so this has made the process immensely easier. I have to admit, my first reaction was to panic but I feel alarmingly in control.",
+      "That said, isn't balance the thing always? I remember thinking as I looked through these entries before taht I wasn't taking enough time to step away before returning to the problem. I was being frantic and trying to do a lot very quickly. Sometimes this works and sometimes this results in flailing. Luckily, while I was dealing with all of the flooding nightmare I was able to think through my problem by the time I got the computer set up and get all my endpoints postman tested, which was nice. I know in its current format I don't like how the logout is set up but I also know that I still have another day of work to get this part to a good place and then I have to set up the interface on the other end as well. So maybe I can be nitpicky later. MVP is mother of viable progress. (*BTW if you are new to programming it is actually Minimum Viable Product - but I was trying to wax poetic about the concept here.*)",
+      "Anyway, I don't want to stay here all night, I still have to move a bunch of books and furniture as the carpet people come out tomorrow to air things out. Unfortunately the flood preparation is very important. But I will at least be able to work from the room I have set up. It's been kind of our lab/workshop for art things, and I've spent some time fixing it up not too long ago, so it makes a fair sanctuary from the flood nightmare in which I can work. So I will be on tomorrow but wanted to write a bit for myself at least and fix this update I didn't have a chance to before I had to move the electronics unexpectedly."
+    ],
+    "tags": ["Flood", "Balance", "MVP", "WorkLife"]
   }
 ]

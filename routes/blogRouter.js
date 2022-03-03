@@ -1,12 +1,13 @@
 const express = require("express");
 const Blog = require("../models/blog");
 const blogRouter = express.Router();
-const authenticate = require('../authenticate');
+const authenticate = require("../authenticate");
 
 blogRouter
   .route("/")
   .get((req, res, next) => {
     Blog.find()
+      .populate("comments.author")
       .then((blogs) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
@@ -44,6 +45,7 @@ blogRouter
   .route("/:blogId")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("comments.author")
       .then((blog) => {
         res.statusCode = 200;
         res.setHeader("Content-Type", "application/json");
@@ -84,6 +86,7 @@ blogRouter
   .route("/:blogId/comments")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("comments.author")
       .then((blog) => {
         if (blog) {
           res.statusCode = 200;
@@ -101,6 +104,7 @@ blogRouter
     Blog.findById(req.params.blogId)
       .then((blog) => {
         if (blog) {
+          req.body.author = req.user._id;
           blog.comments.push(req.body);
           blog
             .save()
@@ -152,6 +156,7 @@ blogRouter
   .route("/:blogId/comments/:commentId")
   .get((req, res, next) => {
     Blog.findById(req.params.blogId)
+      .populate("comments.author")
       .then((blog) => {
         if (blog && blog.comments.id(req.params.commentId)) {
           res.statusCode = 200;
