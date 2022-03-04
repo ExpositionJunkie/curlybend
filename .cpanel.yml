@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/curlugqk/curlyb/
+    - /bin/cp -R * $DEPLOYPATH
+More:
