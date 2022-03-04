@@ -301,5 +301,18 @@
       "Anyway, I don't want to stay here all night, I still have to move a bunch of books and furniture as the carpet people come out tomorrow to air things out. Unfortunately the flood preparation is very important. But I will at least be able to work from the room I have set up. It's been kind of our lab/workshop for art things, and I've spent some time fixing it up not too long ago, so it makes a fair sanctuary from the flood nightmare in which I can work. So I will be on tomorrow but wanted to write a bit for myself at least and fix this update I didn't have a chance to before I had to move the electronics unexpectedly."
     ],
     "tags": ["Flood", "Balance", "MVP", "WorkLife"]
+  },
+  {
+    "id": "21",
+    "date": "3/3/2022 3:58",
+    "title": "The Missing Link",
+    "subtitle": "(API Call)",
+    "text": [
+      "Getting ready to link together this server to the front end. I have a billion things on my mind right now - most of which are thoughts about the interview I just had. I just had a fun interview. Interviews have been fun - how amazing is that?! I had always dreamed of getting to a point with something where my enthusiasm would be rewarded or embraced, but that just doesn't happen as a bill collector. Also, enthusiasm as a bill collector usually ended up souring the rest of your life in some way. I stayed there for so long because I wanted to be near the data or writing in a spreadsheet. I weirdly liked spreadsheets. It took me far too long to learn that I really just liked demanding that computers do what I want them to.",
+      "Anyway, I think it went well. At least I hope it did. I didn't restrain myself and kind of said just what I wanted to - that often scares people away but more and more I'm wondering if it is worth trying to pretend to be someone I'm not. I mean, it's not - is it? That's like living to work instead of working to live. I don't want that life. But I know devs. Devs are weird. Like me. And if we stopped being strange I think it would be a very sad place indeed. So to hell with it, I never liked the kind of jobs where you have to pretend you're looking straight in their eyes and worry about the kind of handshake you have or the cost of your pants or shoes. All banal trivialities - I just want to go somewhere I can do what I love.",
+      "Anyway, I could wax poetic all day about programming - after all that's why I'm working so damn hard here to get this right! But I need to move on and make some changes. The reason I'm making sure to write this down: something my interviewer said about REST strategies. Made me think that I need to write a note to myself that I need to change the setup of the blog structure. Maybe only on the front end. Obfuscate it a little - route in their browser nicely with their username instead of blogId. Maybe keep it blog/:blogId back here.",
+      "Also, I have to say I'm sure glad that facebook makes you show your work that you are deleting user data for their OAuth API. Finally. Upsetting that wasn't the case when I was learning to use it. Does mean I have a few ethical problems to figure out with myself when I'm making my privacy policies though."
+    ],
+    "tags": ["frontend", "backend", "routing"]
   }
 ]
