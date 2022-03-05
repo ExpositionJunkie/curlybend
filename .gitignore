@@ -2,3 +2,4 @@
 /config.js
 bin/curlyb.cert
 bin/curlyb.key
+/data

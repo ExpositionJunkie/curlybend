@@ -314,5 +314,17 @@
       "Also, I have to say I'm sure glad that facebook makes you show your work that you are deleting user data for their OAuth API. Finally. Upsetting that wasn't the case when I was learning to use it. Does mean I have a few ethical problems to figure out with myself when I'm making my privacy policies though."
     ],
     "tags": ["frontend", "backend", "routing"]
+  },
+  {
+    "id": "22",
+    "date": "3/3/2022 8:12",
+    "title": "Recursive cPanel",
+    "subtitle": "Eeesh",
+    "text": [
+      "This documentation: https://docs.cpanel.net/knowledge-base/web-services/guide-to-git-deployment/. You try to look into the structure of hte yml file - how to write it - and every guide leads you back to this article. There has to be a way to do this. In my hubris of getting away from subscription fees I somehow picked the least beginner friendly deployment app. I know in a week I will look back and think - it wasn't that bad. And that's what lead me here. Wait. The keys. Of course. Dang it!",
+      "On second thought, that sentence. I just need to take a break.",
+      "TODO: add unlisted feature to take off certain posts so that users can have private thoughts that aren't broadcast to their friends. Worried about impact both on equipment but also on privacy though. Need to make secure. Security only goes so far. Implications if data leaked, leads to bad things. But I feel a little over my head about the deployment stuff. I'm told cpanel isn't used for these kind of apps but I don't want to pay aws for it. What if I make some rookie mistake and leave a server on and have to pay? I'm doing this the poor man's route, all the way. Which means I need to find a way to do it cheap. I saw they have a link to github. But moreso than that people nest them. Def would want to unlist this. Luckily github is private."
+    ],
+    "tags": ["unlisted"]
   }
 ]
