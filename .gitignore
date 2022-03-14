@@ -3,3 +3,5 @@
 bin/curlyb.cert
 bin/curlyb.key
 /data
+.env
+config.js

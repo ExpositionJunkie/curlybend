@@ -17,6 +17,19 @@ const commentSchema = new Schema(
   { timestamps: true }
 );
 
+const photoSchema = new Schema(
+  {
+    url: {
+      type: String,
+      required: true,
+    },
+    alt: {
+      type: String,
+    },
+  },
+  { timestamps: true }
+);
+
 const blogSchema = new Schema(
   {
     date: Date,
@@ -41,6 +54,7 @@ const blogSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    photos: [photoSchema],
   },
   { timestamps: true }
 );
