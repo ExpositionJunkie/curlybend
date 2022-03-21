@@ -2,6 +2,7 @@
 /config.js
 bin/curlyb.cert
 bin/curlyb.key
+bin/curlyb.csr
 /data
 .env
 config.js
