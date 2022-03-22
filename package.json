@@ -1,38 +1,39 @@
 {
-    "name": "curlyb-end",
-    "version": "1.0.0",
-    "description": "Backend for Curly B",
-    "main": "app.js",
-    "scripts": {
-        "test": "echo \"Error not specified\" && exit 1",
-        "start": "node ./bin/www"
-    },
-    "engines": {
-        "node": "17.4.0"
-    },
-    "dependencies": {
-        "cookie-parser": "1.4.6",
-        "cors": "2.8.5",
-        "debug": "4.3.3",
-        "dotenv": "16.0.0",
-        "express": "4.17.3",
-        "express-session": "1.17.2",
-        "gh-pages": "3.2.3",
-        "http-errors": "2.0.0",
-        "jsonwebtoken": "8.5.1",
-        "mongodb": "4.4.0",
-        "mongoose": "6.2.3",
-        "morgan": "1.10.0",
-        "mpath": "0.8.4",
-        "multer": "^1.4.4",
-        "passport": "0.5.2",
-        "passport-jwt": "4.0.0",
-        "passport-local": "1.0.0",
-        "passport-local-mongoose": "6.1.0",
-        "pug": "3.0.2",
-        "session-file-store": "1.5.0"
-    },
-    "devDependencies": {
-        "nodemon": "2.0.15"
-    }
+  "name": "curlyb-end",
+  "version": "1.0.0",
+  "description": "Backend for Curly B",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error not specified\" && exit 1",
+    "start": "node ./bin/www"
+  },
+  "engines": {
+    "node": "17.4.0",
+    "npm": "8.3.1"
+  },
+  "dependencies": {
+    "cookie-parser": "1.4.6",
+    "cors": "2.8.5",
+    "debug": "4.3.3",
+    "dotenv": "16.0.0",
+    "express": "4.17.3",
+    "express-session": "1.17.2",
+    "gh-pages": "3.2.3",
+    "http-errors": "2.0.0",
+    "jsonwebtoken": "8.5.1",
+    "mongodb": "4.4.0",
+    "mongoose": "6.2.3",
+    "morgan": "1.10.0",
+    "mpath": "0.8.4",
+    "multer": "^1.4.4",
+    "passport": "0.5.2",
+    "passport-jwt": "4.0.0",
+    "passport-local": "1.0.0",
+    "passport-local-mongoose": "6.1.0",
+    "pug": "3.0.2",
+    "session-file-store": "1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.15"
+  }
 }
