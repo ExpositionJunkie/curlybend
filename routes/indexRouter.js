@@ -18,7 +18,7 @@ indexRouter
       res.end("PUT operation not supported on index");
     }
   )
-  .delete((req, res), next => {
+  .delete((req, res, next) => {
     res.statusCode = 403;
     res.end("DELETE operation not supported on index");
   });
