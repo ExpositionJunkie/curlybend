@@ -5,9 +5,9 @@ const indexRouter = express.Router();
 indexRouter
   .route("/")
   .options((req, res) => res.sendStatus(200))
-  .get((req, res) => {
+  .get((req, res, next) => {
     res.statusCode = 200;
-    res.end("GET OPERATION SUCCESS - You have reached the index");
+    res.render("index", {title: "Curlybooty"})
   })
   .post((req, res) => {
     res.statusCode = 403;
