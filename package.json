@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error not specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "builder": "gh-pages -b bob"
   },
   "engines": {
     "node": "17.4.0",
