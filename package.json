@@ -7,6 +7,9 @@
         "test": "echo \"Error not specified\" && exit 1",
         "start": "node ./bin/www"
     },
+    "engines": {
+        "node": "17.4.0"
+    },
     "dependencies": {
         "cookie-parser": "1.4.6",
         "cors": "2.8.5",
