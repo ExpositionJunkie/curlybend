@@ -36,15 +36,15 @@ server.on("listening", onListening);
  * Create HTTPS server.
  */
 
-if (process.env.NODE === "development") {
-  const options = {
+if (process.env.NODE === "dev") {
+  var options = {
     key: fs.readFileSync(__dirname + "/curlyb.key"),
     cert: fs.readFileSync(__dirname + "/curlyb.cert"),
   };
 }
 
-if (process.env.NODE === "production") {
-  const options = {
+if (process.env.NODE === "prod") {
+  var options = {
     key: process.env.curlybkey,
     cert: process.env.curlybcert,
   };
