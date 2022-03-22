@@ -36,10 +36,19 @@ server.on("listening", onListening);
  * Create HTTPS server.
  */
 
-const options = {
-  key: fs.readFileSync(__dirname + "/curlyb.key"),
-  cert: fs.readFileSync(__dirname + "/curlyb.cert"),
-};
+if (process.env.NODE === "development") {
+  const options = {
+    key: fs.readFileSync(__dirname + "/curlyb.key"),
+    cert: fs.readFileSync(__dirname + "/curlyb.cert"),
+  };
+}
+
+if (process.env.NODE === "production") {
+  const options = {
+    key: process.env.curlybkey,
+    cert: process.env.curlybcert,
+  };
+}
 
 const secureServer = https.createServer(options, app);
 
