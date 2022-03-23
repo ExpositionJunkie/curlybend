@@ -46,6 +46,9 @@ app.use(passport.initialize());
 
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 
+//I did have some code here to redirect if https not enabled but had to remove because of how heroku routes
+//all requests on the server end as http requests. Not much of a way to get around that.
+
 app.use("/", indexRouter);
 app.use("/blog", blogRouter);
 app.use("/users", usersRouter);

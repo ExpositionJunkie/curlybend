@@ -7,8 +7,10 @@ const whitelist = [
   /http:\/\/localhost:*/, 
   /https:\/\/localhost\.herokuapp\.com\/*/,
   /https:\/\/curlybooty\.herokuapp\.com\/*/,
-  /https:\/\/api.curlybrackets.me*/
+  /https:\/\/api.curlybrackets.me*/,
+  /\*\/\*/
 ];
+
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
   if (whitelist.indexOf(req.header("Origin")) !== -1) {
