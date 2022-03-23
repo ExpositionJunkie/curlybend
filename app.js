@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 
 //Back to express
 var app = express();
-app.use(cors());
+
 
 //Mongo
 const connect = mongoose.connect(
@@ -43,6 +43,7 @@ app.use(logger("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
+app.use(cors());
 
 app.all("*", (req, res, next) => {
   //Sends insecure http traffic to https server
