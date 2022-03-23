@@ -6,6 +6,7 @@ const whitelist = [
   "fe80::59ae:bbcc:aa50:aeab%15",
   "http://localhost:3000", 
   "https://localhost:3443",
+  "*",
 ];
 const corsOptionsDelegate = (req, callback) => {
   let corsOptions;
