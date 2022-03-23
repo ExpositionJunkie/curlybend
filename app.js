@@ -14,7 +14,8 @@ const uploadRouter = require("./routes/uploadRouter");
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
   console.log("development");
-} else {
+}
+if (process.env.NODE_ENV === "production") {
   console.log("production");
 }
 
@@ -46,8 +47,21 @@ app.use(passport.initialize());
 
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 
-//I did have some code here to redirect if https not enabled but had to remove because of how heroku routes
-//all requests on the server end as http requests. Not much of a way to get around that.
+if (process.env.NODE_ENV === "production") {
+  app.all("*", (req, res, next) => {
+    if (req.secure) {
+      return next();
+    } else {
+      console.log(
+        `Redirecting to: https://${req.hostname}:${app.get("secPort")}${req.url}`
+      );
+      res.redirect(
+        301,
+        `https://${req.hostname}:${app.get("secPort")}${req.url}`
+      );
+    }
+  });
+}
 
 app.use("/", indexRouter);
 app.use("/blog", blogRouter);
