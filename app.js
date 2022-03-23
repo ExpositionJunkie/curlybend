@@ -20,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 
 //Back to express
 var app = express();
+app.use(cors());
 
 //Mongo
 const connect = mongoose.connect(

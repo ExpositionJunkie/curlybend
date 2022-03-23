@@ -1,7 +1,5 @@
 const cors = require("cors");
 
-
-
 const whitelist = [
   /https:\/\/curlybrackets.me*/,
   /192.168.1.42*/,
