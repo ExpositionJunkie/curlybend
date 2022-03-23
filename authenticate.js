@@ -4,6 +4,7 @@ const User = require("./models/user");
 const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const jwt = require("jsonwebtoken");
+
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }

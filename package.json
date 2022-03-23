@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Backend for Curly B",
   "main": "app.js",
-  "homepage":"curlybooty.herokuapp.com",
+  "homepage": "curlybooty.herokuapp.com",
   "scripts": {
     "test": "echo \"Error not specified\" && exit 1",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "engines": {
     "node": "17.4.0",
