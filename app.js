@@ -43,22 +43,6 @@ app.use(logger("tiny"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
-app.use(cors());
-
-app.all("*", (req, res, next) => {
-  //Sends insecure http traffic to https server
-  if (req.secure) {
-    return next();
-  } else {
-    console.log(
-      `Redirecting to: https://${req.hostname}:${app.get("secPort")}${req.url}`
-    );
-    res.redirect(
-      301,
-      `https://${req.hostname}:${app.get("secPort")}${req.url}`
-    );
-  }
-});
 
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 
