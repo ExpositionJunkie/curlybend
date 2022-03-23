@@ -47,22 +47,6 @@ app.use(passport.initialize());
 
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 
-if (process.env.NODE_ENV === "production") {
-  app.all("*", (req, res, next) => {
-    if (req.secure) {
-      return next();
-    } else {
-      console.log(
-        `Redirecting to: https://${req.hostname}:${app.get("secPort")}${req.url}`
-      );
-      res.redirect(
-        301,
-        `https://${req.hostname}:${app.get("secPort")}${req.url}`
-      );
-    }
-  });
-}
-
 app.use("/", indexRouter);
 app.use("/blog", blogRouter);
 app.use("/users", usersRouter);
