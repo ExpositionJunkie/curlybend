@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/curlugqk/repositories/curlybend 
+    - export DEPLOYPATH=/home/curlugqk/api.curlybrackets.me
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
