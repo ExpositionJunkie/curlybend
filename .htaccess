@@ -1,6 +1,5 @@
 <IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase .
-RewriteCond %{HTTP_HOST} ^(?:api\.)curlybrackets\.me$ [NC]
-RewriteRule ^https://api.curlybrackets.me%{REQUEST_URI} [L,R=301]
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule (.*) https://www.api.curlybrackets.me/$1 [R=301,L]
 </IfModule>
