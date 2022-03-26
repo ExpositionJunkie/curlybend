@@ -9,7 +9,7 @@ const whitelist = [
   /https:\/\/localhost\.herokuapp\.com\/*/,
   /https:\/\/curlybooty\.herokuapp\.com\/*/,
   /https:\/\/api.curlybrackets.me*/,
-  /\*\/\*/
+  /\w*\/\w*/
 ];
 
 const corsOptionsDelegate = (req, callback) => {
