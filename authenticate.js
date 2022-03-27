@@ -60,7 +60,7 @@ exports.verifyUser = passport.authenticate('jwt', {session: false})
 //validates email adapted from https://www.w3resource.com/javascript/form/email-validation.php
 exports.checkEmail = (inputText) => {
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (inputText.value.match(emailRegex)) {
+  if (inputText.match(emailRegex)) {
     return true;
   } else {
     return false;
@@ -72,7 +72,7 @@ exports.checkEmail = (inputText) => {
 exports.checkPassword = (inputText) => {
   const passwordRegex =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
-  if (inputText.value.match(passwordRegex)) {
+  if (inputText.match(passwordRegex)) {
     return true;
   } else {
     return false;
