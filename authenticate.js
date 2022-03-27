@@ -58,7 +58,7 @@ exports.verifyUser = passport.authenticate('jwt', {session: false})
 
 //these allow a double check for validity when signing up for an account
 //validates email adapted from https://www.w3resource.com/javascript/form/email-validation.php
-exports.checkPassword = (inputText) => {
+exports.checkEmail = (inputText) => {
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   if (inputText.value.match(emailRegex)) {
     return true;
