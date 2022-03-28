@@ -20,17 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 var app = express();
 
 app.all("*", (req, res, next) => {
-  if (req.secure) {
-    return next();
-  } else {
-    console.log(
-      `Redirecting to: https://${req.hostname}:${app.get("secPort")}${req.url}`
-    );
-    res.redirect(
-      301,
-      `https://${req.hostname}:${app.get("secPort")}${req.url}`
-    );
-  }
+  console.log("req", req)
 });
 
 
