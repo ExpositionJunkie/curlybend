@@ -19,11 +19,6 @@ if (process.env.NODE_ENV !== "production") {
 //Back to express
 var app = express();
 
-app.all("*", (req, res, next) => {
-  console.log("req", req)
-});
-
-
 //Mongo
 const connect = mongoose.connect(
   `mongodb+srv://${process.env.MONGOUSERNAME}:${process.env.MONGOPASSWORD}@booty2.nibmc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
