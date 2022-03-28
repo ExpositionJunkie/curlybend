@@ -15,12 +15,23 @@ if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
   console.log("development");
 }
-if (process.env.NODE_ENV === "production") {
-  console.log("production");
-}
 
 //Back to express
 var app = express();
+
+app.all("*", (req, res, next) => {
+  if (req.secure) {
+    return next();
+  } else {
+    console.log(
+      `Redirecting to: https://${req.hostname}:${app.get("secPort")}${req.url}`
+    );
+    res.redirect(
+      301,
+      `https://${req.hostname}:${app.get("secPort")}${req.url}`
+    );
+  }
+});
 
 
 //Mongo
