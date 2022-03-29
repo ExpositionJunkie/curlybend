@@ -1,0 +1,17 @@
+.title {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  color: rgb(252, 3, 152);
+}
+
+.message {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+.body {
+    background-color: black;
+}

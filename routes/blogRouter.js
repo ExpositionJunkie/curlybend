@@ -29,7 +29,7 @@ blogRouter
       })
       .catch((err) => next(err));
   })
-  .put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res) => {
+  .put(cors.corsWithOptions, authenticate.verifyUser, (req, res) => {
     res.statusCode = 403;
     res.end(
       "PUT operation not supported on /blog - please add your entry at blog/blogID instead."
@@ -67,7 +67,7 @@ blogRouter
     res.statusCode = 403;
     res.end(`POST operation not supported on /blogs/${req.params.blogId}`);
   })
-  .put((req, res, next) => {
+  .put(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
     Blog.findByIdAndUpdate(
       req.params.blogId,
       {

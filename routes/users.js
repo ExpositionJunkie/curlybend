@@ -5,13 +5,127 @@ const router = express.Router();
 const authenticate = require("../authenticate");
 const cors = require("./cors");
 
-/* GET users listing. */
+/* Admin resources */
 router
   .route("/")
   .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
-  .get(cors.cors, (req, res, next) => {
-    res.send("respond with a resource");
-  });
+  .get(
+    cors.cors,
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res, next) => {
+      User.find()
+        .then((users) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(users);
+        })
+        .catch((err) => next(err));
+    }
+  )
+  .put(
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res) => {
+      res.statusCode = 403;
+      res.end("PUT operation not supported on /users");
+    }
+  )
+  .post(
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res, next) => {
+      res.statusCode = 403;
+      res.end("POST operation not supported on /users - please send this post request to /login instead.");
+    }
+  )
+  .delete(
+    cors.cors,
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    authenticate.verifyAdmin,
+    (req, res, next) => {
+      User.deleteMany()
+        .then((response) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json(response);
+        })
+        .catch((err) => next(err));
+    }
+  );
+
+/* For users to be able to see their info and update */
+router
+  .route("/:userId")
+  .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
+  .get(
+    cors.cors,
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    (req, res, next) => {
+      User.findById(req.params.blogId)
+        .then((user) => {
+          res.statusCode = 200;
+          res.setHeader("Content-Type", "application/json");
+          res.json({ username: user.username, email: user.email });
+        })
+        .catch((err) => next(err));
+    }
+  )
+  .put((req, res, next) => {
+    User.findByIdAndUpdate(
+      req.params.userId,
+      {
+        $set: req.body,
+      },
+      { new: true }
+    )
+      .then((user) => {
+        res.statusCode = 200;
+        res.setHeader("Content-Type", "application/json");
+        res.json(user);
+      })
+      .catch((err) => next(err));
+  })
+  .post(
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    (req, res, next) => {
+      res.statusCode = 403;
+      res.end(`POST operation not supported on /user/${req.params.userId}`);
+    }
+  )
+  .delete(
+    cors.cors,
+    cors.corsWithOptions,
+    authenticate.verifyUser,
+    (req, res, next) => {
+      User.findById(req.params.userId)
+        .then((user) => {
+          if (user._id == req.user.id) {
+            user
+              .deleteOne({ _id: req.params.userId })
+              .then((response) => {
+                res.statusCode = 200;
+                res.setHeader("Content-Type", "application/json");
+                res.json(response);
+              })
+              .catch((err) => next(err));
+          } else {
+            err = new Error(
+              `User ${req.params.userId} is not ${req.user.id} - operation is forbidden.`
+            );
+            err.status = 403;
+            return next(err);
+          }
+        })
+        .catch((err) => next(err));
+    }
+  );
 
 router
   .route("/signup")
