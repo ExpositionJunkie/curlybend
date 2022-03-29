@@ -3,6 +3,9 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-size: 3rem;
   color: rgb(252, 3, 152);
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 2rem;
 }
 
 .message {
@@ -10,6 +13,7 @@
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     font-size: 1.5rem;
     color: white;
+    margin: 3rem;
   }
   
 .body {
