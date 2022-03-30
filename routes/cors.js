@@ -5,11 +5,13 @@ const whitelist = [
   /192.168.1.42*/,
   /fe80::59ae:bbcc:aa50:aeab%15*/,
   /http:\/\/localhost:*/, 
+  /http:\/\/localhost:3000/, 
   /http:\/\/localhost:3001/, 
   /https:\/\/localhost\.herokuapp\.com\/*/,
   /https:\/\/curlybooty\.herokuapp\.com\/*/,
   /https:\/\/api.curlybrackets.me*/,
-  /\w*\/\w*/
+  /\w*\/\w*/,
+  /\w*\/\w*\/*/
 ];
 
 const corsOptionsDelegate = (req, callback) => {
