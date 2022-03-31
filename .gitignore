@@ -7,3 +7,11 @@ bin/curlyb.csr
 /data
 .env
 config.js
+key.pem
+cert.pem
+localhost.pem
+localhost-key.pem
+localhost.pfx
+
+server.cert
+server.key

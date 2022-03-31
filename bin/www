@@ -38,8 +38,8 @@ server.on("listening", onListening);
 
 if (process.env.NODE_ENV === "development") {
   var options = {
-    key: fs.readFileSync(__dirname + "/curlyb.key"),
-    cert: fs.readFileSync(__dirname + "/curlyb.cert"),
+    key: fs.readFileSync(__dirname + "/server.key"),
+    cert: fs.readFileSync(__dirname + "/server.cert"),
   };
 }
 
