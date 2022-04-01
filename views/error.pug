@@ -1,6 +1,7 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  h1.title= status
+  h2.message= message
+  pre.err-stack #{error.stack}
+  link(rel='stylesheet', href='/stylesheets/style.css')

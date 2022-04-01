@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 //Routes
 const indexRouter = require("./routes/indexRouter");
 const blogRouter = require("./routes/blogRouter");
-const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/usersRouter");
 const uploadRouter = require("./routes/uploadRouter");
 
 if (process.env.NODE_ENV !== "production") {

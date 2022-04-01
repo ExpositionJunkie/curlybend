@@ -22,8 +22,7 @@ router.get(
   }
 );
 
-router
-.post("/signup", cors.corsWithOptions, (req, res) => {
+router.post("/signup", cors.corsWithOptions, (req, res) => {
   if (
     authenticate.checkEmail(req.body.email) &&
     authenticate.checkPassword(req.body.password)
@@ -51,9 +50,13 @@ router
               return;
             }
             passport.authenticate("local")(req, res, () => {
-              res.statusCode = 200;
+              res.statusCode = 201;
               res.setHeader("Content-Type", "application/json");
-              res.json({ success: true, status: "Registration Successful!", message: "Welcome to Curlybrackets!"});
+              res.json({
+                success: true,
+                title: "Registration Successful!",
+                message: "Welcome to Curlybrackets!",
+              });
             });
           });
         }
@@ -63,11 +66,10 @@ router
     !authenticate.checkEmail(req.body.email) &&
     authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 403;
+    res.statusCode = 202;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
-      errType: 101,
       status: "Email Invalid",
       message: "Please enter a valid email address.",
     });
@@ -75,11 +77,10 @@ router
     authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 403;
+    res.statusCode = 202;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
-      errType: 202,
       status: "Password Invalid",
       message:
         "Passwords must be 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.",
@@ -88,16 +89,13 @@ router
     !authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 403;
+    res.statusCode = 202;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
-      errType: 303,
       status: "Email and Password Incorrect",
-      message: [
-        "Please enter a valid email address",
-        "Passwords must be 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.",
-      ],
+      message:
+        "Please enter a valid email address. Passwords must be 8 to 15 characters which contain at least one lowercase letter, one uppercase letter, one numeric digit, and one special character.",
     });
   }
 });

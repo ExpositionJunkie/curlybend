@@ -9,13 +9,21 @@
 }
 
 .message {
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    font-size: 1.5rem;
-    color: white;
-    margin: 3rem;
-  }
-  
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  margin: 3rem;
+}
+
+.err-stack {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.7rem;
+  color: white;
+  margin: 3rem;
+}
+
 .body {
-    background-color: black;
+  background-color: black;
 }
