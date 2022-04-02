@@ -54,7 +54,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
               res.setHeader("Content-Type", "application/json");
               res.json({
                 success: true,
-                title: "Registration Successful!",
+                status: "Registration Successful!",
                 message: "Welcome to Curlybrackets!",
               });
             });
@@ -66,7 +66,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     !authenticate.checkEmail(req.body.email) &&
     authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 202;
+    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
@@ -77,7 +77,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 202;
+    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
@@ -89,7 +89,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     !authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 202;
+    res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
