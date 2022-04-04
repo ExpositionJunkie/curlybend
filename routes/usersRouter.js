@@ -50,7 +50,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
               return;
             }
             passport.authenticate("local")(req, res, () => {
-              res.statusCode = 201;
+              res.statusCode = 200;
               res.setHeader("Content-Type", "application/json");
               res.json({
                 success: true,
@@ -66,7 +66,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     !authenticate.checkEmail(req.body.email) &&
     authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 200;
+    res.statusCode = 201;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
@@ -77,7 +77,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 200;
+    res.statusCode = 201;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,
@@ -89,7 +89,7 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
     !authenticate.checkEmail(req.body.email) &&
     !authenticate.checkPassword(req.body.password)
   ) {
-    res.statusCode = 200;
+    res.statusCode = 403;
     res.setHeader("Content-Type", "application/json");
     res.json({
       success: false,

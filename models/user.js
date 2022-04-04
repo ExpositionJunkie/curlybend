@@ -10,7 +10,7 @@ const userSchema = new Schema({
   },
   username: {
     type: String,
-    default: 'Anonymous'
+    default: 'Anonymous',
   },
   admin: {
     type: Boolean,
