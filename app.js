@@ -4,6 +4,7 @@ var createError = require("http-errors");
 var path = require("path");
 const passport = require("passport");
 const mongoose = require("mongoose");
+const cors = require("./routes/cors")
 
 //Routes
 const indexRouter = require("./routes/indexRouter");
@@ -18,6 +19,20 @@ if (process.env.NODE_ENV !== "production") {
 
 //Back to express
 var app = express();
+
+var postAuth = function (req, res, next) {
+  // res.setHeader("Access-Control-Allow-Origin", "*");
+  // res.setHeader("Access-Control-Allow-Credentials", "true");
+  // res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+  );
+
+  next();
+};
+
+
 
 //Mongo
 const connect = mongoose.connect(
@@ -36,32 +51,22 @@ connect
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 
-app.use(function (req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
-  );
-
-  next();
-});
 app.use(
   logger(":method :url :status :res[content-length] - :response-time ms")
 );
 app.use(express.json());
+app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 app.use(express.urlencoded({ extended: false }));
 app.use(passport.initialize());
 
-app.disable("x-powered-by"); //Hiding header that says it is Node/Express
-
+app.options("*", cors.cors)
 app.use("/", indexRouter);
-app.use("/blog", blogRouter);
 app.use("/users", usersRouter);
-app.use("/imageUpload", uploadRouter);
 
 app.use(express.static(path.join(__dirname + "/public")));
+
+app.use("/blog", blogRouter);
+app.use("/imageUpload", uploadRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

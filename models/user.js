@@ -7,6 +7,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
     unique: true,
+    maxLength: 320,
   },
   username: {
     type: String,
@@ -18,6 +19,6 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.plugin(passportLocalMongoose);
+userSchema.plugin(passportLocalMongoose, {usernameField: "email"});
 
 module.exports = mongoose.model("User", userSchema);
