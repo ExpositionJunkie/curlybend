@@ -12,6 +12,8 @@ const userSchema = new Schema({
   username: {
     type: String,
     default: 'Anonymous',
+    unique: true,
+    required: true,
   },
   admin: {
     type: Boolean,
@@ -19,6 +21,6 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.plugin(passportLocalMongoose, {usernameField: "email"});
+userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model("User", userSchema);

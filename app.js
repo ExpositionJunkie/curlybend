@@ -6,11 +6,22 @@ const passport = require("passport");
 const mongoose = require("mongoose");
 const cors = require("./routes/cors")
 
+//sessions and cookie parser - necessary for passport to work
+var session = require("express-session")
+const cookieParser = require("cookie-parser")
+
 //Routes
 const indexRouter = require("./routes/indexRouter");
 const blogRouter = require("./routes/blogRouter");
 const usersRouter = require("./routes/usersRouter");
 const uploadRouter = require("./routes/uploadRouter");
+
+
+//a word on passport and how it works
+//https://www.airpair.com/express/posts/expressjs-and-passportjs-sessions-deep-dive
+//This is why I have the below config as we are using express sessions 4
+//https://mianlabs.com/2018/05/22/using-mongodb-for-quick-session-storage-with-connect-mongo-in-express/
+//This may likewise be the answer
 
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
@@ -20,17 +31,17 @@ if (process.env.NODE_ENV !== "production") {
 //Back to express
 var app = express();
 
-var postAuth = function (req, res, next) {
-  // res.setHeader("Access-Control-Allow-Origin", "*");
-  // res.setHeader("Access-Control-Allow-Credentials", "true");
-  // res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
-  );
+// var postAuth = function (req, res, next) {
+//   // res.setHeader("Access-Control-Allow-Origin", "*");
+//   // res.setHeader("Access-Control-Allow-Credentials", "true");
+//   // res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//   res.setHeader(
+//     "Access-Control-Allow-Headers",
+//     "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+//   );
 
-  next();
-};
+//   next();
+// };
 
 
 
@@ -55,13 +66,19 @@ app.use(
   logger(":method :url :status :res[content-length] - :response-time ms")
 );
 app.use(express.json());
+
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 app.use(express.urlencoded({ extended: false }));
-app.use(passport.initialize());
-
 app.options("*", cors.cors)
+
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+app.use(session({ secret: process.env.SESSIONSECRET, maxAge: 1200000, resave: true,
+  saveUninitialized: true}))
+app.use(passport.initialize());
+app.use(passport.session())
+
+
 
 app.use(express.static(path.join(__dirname + "/public")));
 
