@@ -4,10 +4,10 @@ var createError = require("http-errors");
 var path = require("path");
 const passport = require("passport");
 const mongoose = require("mongoose");
-const cors = require("./routes/cors")
+const cors = require("./routes/cors");
 
 //sessions and cookie parser - necessary for passport to work
-var session = require("express-session")
+var session = require("express-session");
 
 //Routes
 const indexRouter = require("./routes/indexRouter");
@@ -23,11 +23,9 @@ if (process.env.NODE_ENV !== "production") {
 //Back to express
 var app = express();
 
-
 //Mongo
-const connect = mongoose.connect(
-  `mongodb+srv://${process.env.MONGOUSERNAME}:${process.env.MONGOPASSWORD}@booty2.nibmc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
-);
+const connect = mongoose.connect(process.env.MONGOURL);
+
 connect
   .then(() => {
     console.log("Connected to db!");
@@ -48,16 +46,20 @@ app.use(express.json());
 
 app.disable("x-powered-by"); //Hiding header that says it is Node/Express
 app.use(express.urlencoded({ extended: false }));
-app.options("*", cors.cors)
+app.options("*", cors.cors);
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
-app.use(session({ secret: process.env.SESSIONSECRET, maxAge: 1200000, resave: true,
-  saveUninitialized: true}))
+app.use(
+  session({
+    secret: process.env.SESSIONSECRET,
+    maxAge: 1200000,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 app.use(passport.initialize());
-app.use(passport.session())
-
-
+app.use(passport.session());
 
 app.use(express.static(path.join(__dirname + "/public")));
 
