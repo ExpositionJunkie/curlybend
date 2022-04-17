@@ -23,6 +23,7 @@
     "express-session": "1.17.2",
     "gh-pages": "3.2.3",
     "http-errors": "2.0.0",
+    "jsdom": "^19.0.0",
     "jsonwebtoken": "8.5.1",
     "mongodb": "4.4.0",
     "mongoose": "6.2.3",

@@ -5,6 +5,7 @@ const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const jwt = require("jsonwebtoken");
 
+
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -73,9 +74,3 @@ exports.checkPassword = (inputText) => {
     return false;
   }
 };
-
-//https://www.javascripttutorial.net/javascript-dom/javascript-form-validation/
-exports.isBetween = (length, min, max) =>
-  length < min || length > max ? false : true;
-
-exports.isRequired = (value) => (value === "" ? false : true);
