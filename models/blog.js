@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//TODO populating user as the author on comments - is not working but have to take Ellie somewhere.
-
 const commentSchema = new Schema(
   {
     text: {
