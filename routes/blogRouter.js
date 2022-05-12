@@ -323,7 +323,7 @@ blogRouter
   .delete(
     cors.corsWithOptions,
     authenticate.verifyUser,
-    authenticate.verifyAdmin, //delete all blogs allowed only to admin
+    authenticate.verifyAdmin,
     (req, res, next) => {
       res.statusCode = 403;
       res.end("DELETE operation not supported on /blog/tags/:tagid.");
