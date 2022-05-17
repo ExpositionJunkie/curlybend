@@ -298,11 +298,11 @@ blogRouter
       .catch((err) => next(err));
   });
 
-blogRouter
+  blogRouter
   .route("/tags/:tagname")
   .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
   .get(cors.cors, (req, res, next) => {
-    Blog.find({ tags: { $in: [req.params.tagname] } })
+    Blog.find({ tags: /[req.params.tagname]/})
       .populate("author")
       .populate("comments.author")
       .then((blogs) => {
@@ -329,5 +329,6 @@ blogRouter
       res.end("DELETE operation not supported on /blog/tags/:tagid.");
     }
   );
+
 
 module.exports = blogRouter;
