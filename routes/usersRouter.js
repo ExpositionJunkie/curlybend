@@ -49,7 +49,11 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
           passport.authenticate("local")(req, res, () => {
             res.statusCode = 200;
             res.setHeader("Content-Type", "application/json");
-            res.json({ success: true, status: "Registration Successful!", user: user });
+            res.json({
+              success: true,
+              status: "Registration Successful!",
+              user: user,
+            });
           });
         });
       }
@@ -57,12 +61,15 @@ router.post("/signup", cors.corsWithOptions, (req, res) => {
   );
 });
 
+
 router.post(
   "/login",
   cors.corsWithOptions,
   passport.authenticate("local"),
   (req, res) => {
-    const token = authenticate.getToken({ _id: req.user._id });
+    const token = authenticate.getToken({
+      _id: req.user._id,
+    });
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.json({

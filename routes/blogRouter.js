@@ -298,37 +298,5 @@ blogRouter
       .catch((err) => next(err));
   });
 
-  blogRouter
-  .route("/tags/:tagname")
-  .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
-  .get(cors.cors, (req, res, next) => {
-    Blog.find({ tags: /[req.params.tagname]/})
-      .populate("author")
-      .populate("comments.author")
-      .then((blogs) => {
-        res.statusCode = 200;
-        res.setHeader("Content-Type", "application/json");
-        res.json(blogs);
-      })
-      .catch((err) => next(err));
-  })
-  .post(cors.corsWithOptions, authenticate.verifyUser, (req, res, next) => {
-    res.statusCode = 403;
-    res.end("POST operation not supported on /blog/tags/:tagid.");
-  })
-  .put(cors.corsWithOptions, authenticate.verifyUser, (req, res) => {
-    res.statusCode = 403;
-    res.end("PUT operation not supported on /blog/tags/:tagid.");
-  })
-  .delete(
-    cors.corsWithOptions,
-    authenticate.verifyUser,
-    authenticate.verifyAdmin,
-    (req, res, next) => {
-      res.statusCode = 403;
-      res.end("DELETE operation not supported on /blog/tags/:tagid.");
-    }
-  );
-
 
 module.exports = blogRouter;
