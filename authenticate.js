@@ -5,7 +5,6 @@ const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const jwt = require("jsonwebtoken");
 
-
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
@@ -49,8 +48,12 @@ exports.verifyAdmin = (req, res, next) => {
   }
 };
 
-
-exports.verifyUser = passport.authenticate("jwt", { session: false });
+exports.verifyUser = passport.authenticate("jwt", {
+  successReturnToOrRedirect: "/",
+  failureRedirect: "/login",
+  failureMessage: true,
+  keepSessionInfo: true,
+});
 
 //these allow a double check for validity when signing up for an account
 //validates email adapted from https://www.w3resource.com/javascript/form/email-validation.php

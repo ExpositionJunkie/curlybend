@@ -87,7 +87,10 @@ router
     if (req.session) {
       req.session.destroy();
       res.clearCookie("session-id");
-      res.redirect("/");
+      req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+      });
     } else {
       const err = new Error("You are not logged in!");
       err.status = 401;
