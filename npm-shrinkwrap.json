@@ -23,8 +23,8 @@
         "mongoose": "6.2.3",
         "morgan": "1.10.0",
         "mpath": "0.8.4",
-        "multer": "1.4.4",
-        "passport": "0.5.2",
+        "multer": "1.4.5-lts.1",
+        "passport": "0.6.0",
         "passport-jwt": "4.0.0",
         "passport-local": "1.0.0",
         "passport-local-mongoose": "6.1.0",
@@ -498,18 +498,6 @@
       "version": "1.1.2",
       "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
       "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
-    },
-    "node_modules/busboy": {
-      "version": "0.2.14",
-      "resolved": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
-      "integrity": "sha1-bCpiLvz0fFe7vh4qnDetNseSVFM=",
-      "dependencies": {
-        "dicer": "0.2.5",
-        "readable-stream": "1.1.x"
-      },
-      "engines": {
-        "node": ">=0.8.0"
-      }
     },
     "node_modules/bytes": {
       "version": "3.1.2",
@@ -1555,7 +1543,7 @@
       }
     },
     "node_modules/got": {
-      "version": "9.6.0",
+      "version": "11.8.5",
       "resolved": "https://registry.npmjs.org/got/-/got-9.6.0.tgz",
       "integrity": "sha512-R7eWptXuGYxwijs0eV+v3o6+XH1IqVK8dJOEecQfTmkncw9AV4dcw/Dhxi8MdlqPthxxpZyizMzyg8RTmEsG+Q==",
       "dev": true,
@@ -2474,21 +2462,32 @@
       "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
     },
     "node_modules/multer": {
-      "version": "1.4.4",
-      "resolved": "https://registry.npmjs.org/multer/-/multer-1.4.4.tgz",
-      "integrity": "sha512-2wY2+xD4udX612aMqMcB8Ws2Voq6NIUPEtD1be6m411T4uDH/VtL9i//xvcyFlTVfRdaBsk7hV5tgrGQqhuBiw==",
+      "version": "1.4.5-lts.1",
+      "resolved": "https://registry.npmjs.org/multer/-/multer-1.4.5-lts.1.tgz",
+      "integrity": "sha512-ywPWvcDMeH+z9gQq5qYHCCy+ethsk4goepZ45GLD63fOu0YcNecQxi64nDs3qluZB+murG3/D4dJ7+dGctcCQQ==",
       "dependencies": {
         "append-field": "^1.0.0",
-        "busboy": "^0.2.11",
+        "busboy": "1.6.0",
         "concat-stream": "^1.5.2",
         "mkdirp": "^0.5.4",
         "object-assign": "^4.1.1",
-        "on-finished": "^2.3.0",
         "type-is": "^1.6.4",
         "xtend": "^4.0.0"
       },
       "engines": {
-        "node": ">= 0.10.0"
+        "node": ">= 6.0.0"
+      }
+    },
+    "node_modules/multer/node_modules/busboy": {
+      "version": "1.6.0",
+      "resolved": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
+      "integrity": "sha512-InWFDomvlkEj+xWLBfU3AvnbVYqeTWmQopiW0tWWEy5yehYm2YkGEc59sUmw/4ty5Zj/b0WHGs1LgecuBSBGrg==",
+      "dependencies": {
+        "dicer": "0.2.5",
+        "readable-stream": "1.1.x"
+      },
+      "engines": {
+        "node": ">=0.8.0"
       }
     },
     "node_modules/negotiator": {
@@ -2706,12 +2705,13 @@
       }
     },
     "node_modules/passport": {
-      "version": "0.5.2",
-      "resolved": "https://registry.npmjs.org/passport/-/passport-0.5.2.tgz",
-      "integrity": "sha512-w9n/Ot5I7orGD4y+7V3EFJCQEznE5RxHamUxcqLT2QoJY0f2JdN8GyHonYFvN0Vz+L6lUJfVhrk2aZz2LbuREw==",
+      "version": "0.6.0",
+      "resolved": "https://registry.npmjs.org/passport/-/passport-0.6.0.tgz",
+      "integrity": "sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug==",
       "dependencies": {
         "passport-strategy": "1.x.x",
-        "pause": "0.0.1"
+        "pause": "0.0.1",
+        "utils-merge": "^1.0.1"
       },
       "engines": {
         "node": ">= 0.4.0"
@@ -4327,15 +4327,6 @@
       "resolved": "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz",
       "integrity": "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
     },
-    "busboy": {
-      "version": "0.2.14",
-      "resolved": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
-      "integrity": "sha1-bCpiLvz0fFe7vh4qnDetNseSVFM=",
-      "requires": {
-        "dicer": "0.2.5",
-        "readable-stream": "1.1.x"
-      }
-    },
     "bytes": {
       "version": "3.1.2",
       "resolved": "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
@@ -5149,8 +5140,7 @@
       }
     },
     "got": {
-      "version": "9.6.0",
-      "resolved": "https://registry.npmjs.org/got/-/got-9.6.0.tgz",
+      "version": "https://registry.npmjs.org/got/-/got-9.6.0.tgz",
       "integrity": "sha512-R7eWptXuGYxwijs0eV+v3o6+XH1IqVK8dJOEecQfTmkncw9AV4dcw/Dhxi8MdlqPthxxpZyizMzyg8RTmEsG+Q==",
       "dev": true,
       "requires": {
@@ -5855,18 +5845,28 @@
       "integrity": "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
     },
     "multer": {
-      "version": "1.4.4",
-      "resolved": "https://registry.npmjs.org/multer/-/multer-1.4.4.tgz",
-      "integrity": "sha512-2wY2+xD4udX612aMqMcB8Ws2Voq6NIUPEtD1be6m411T4uDH/VtL9i//xvcyFlTVfRdaBsk7hV5tgrGQqhuBiw==",
+      "version": "1.4.5-lts.1",
+      "resolved": "https://registry.npmjs.org/multer/-/multer-1.4.5-lts.1.tgz",
+      "integrity": "sha512-ywPWvcDMeH+z9gQq5qYHCCy+ethsk4goepZ45GLD63fOu0YcNecQxi64nDs3qluZB+murG3/D4dJ7+dGctcCQQ==",
       "requires": {
         "append-field": "^1.0.0",
-        "busboy": "^0.2.11",
+        "busboy": "1.6.0",
         "concat-stream": "^1.5.2",
         "mkdirp": "^0.5.4",
         "object-assign": "^4.1.1",
-        "on-finished": "^2.3.0",
         "type-is": "^1.6.4",
         "xtend": "^4.0.0"
+      },
+      "dependencies": {
+        "busboy": {
+          "version": "1.6.0",
+          "resolved": "https://registry.npmjs.org/busboy/-/busboy-0.2.14.tgz",
+          "integrity": "sha512-InWFDomvlkEj+xWLBfU3AvnbVYqeTWmQopiW0tWWEy5yehYm2YkGEc59sUmw/4ty5Zj/b0WHGs1LgecuBSBGrg==",
+          "requires": {
+            "dicer": "0.2.5",
+            "readable-stream": "1.1.x"
+          }
+        }
       }
     },
     "negotiator": {
@@ -6026,12 +6026,13 @@
       "integrity": "sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ=="
     },
     "passport": {
-      "version": "0.5.2",
-      "resolved": "https://registry.npmjs.org/passport/-/passport-0.5.2.tgz",
-      "integrity": "sha512-w9n/Ot5I7orGD4y+7V3EFJCQEznE5RxHamUxcqLT2QoJY0f2JdN8GyHonYFvN0Vz+L6lUJfVhrk2aZz2LbuREw==",
+      "version": "0.6.0",
+      "resolved": "https://registry.npmjs.org/passport/-/passport-0.6.0.tgz",
+      "integrity": "sha512-0fe+p3ZnrWRW74fe8+SvCyf4a3Pb2/h7gFkQ8yTJpAO50gDzlfjZUZTO1k5Eg9kUct22OxHLqDZoKUWRHOh9ug==",
       "requires": {
         "passport-strategy": "1.x.x",
-        "pause": "0.0.1"
+        "pause": "0.0.1",
+        "utils-merge": "^1.0.1"
       }
     },
     "passport-jwt": {
